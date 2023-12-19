@@ -39,19 +39,16 @@ def list(message):
                          parse_mode="html")
         bot.send_message(message.chat.id, "3 пара(11:30) Языки программирования I (практ) ауд. 522/2",
                          parse_mode="html")
-        if(time.day==20):
-            bot.send_message(message.chat.id,"Пар нет",parse_mode="html")
-        if(time.day==21):
-            bot.send_message(message.chat.id,"1 пара(8:00) Линейная алгебра (лек) ауд. 202/8")
-            bot.send_message(message.chat.id, "3 пара(11:30) Основы российской государственности (практ) ауд. 221/11")
-        if(time.day==22):
-            bot.send_message(message.chat.id,"1 пара(8:00) Введение в алгоритмы и структуры данных (практ) ауд. 424/8")
-            bot.send_message(message.chat.id,"2 пара(9:45) Линейная алгебра (практ) ауд. 326/12")
-        if(time.day==23):
-            bot.send_message(message.chat.id,"2 пара(9:45) Введение в математический анализ (лек) ауд. 202/8")
-
-
-
+    if(time.day==20):
+        bot.send_message(message.chat.id,"Пар нет",parse_mode="html")
+    if(time.day==21):
+        bot.send_message(message.chat.id,"1 пара(8:00) Линейная алгебра (лек) ауд. 202/8")
+        bot.send_message(message.chat.id, "3 пара(11:30) Основы российской государственности (практ) ауд. 221/11")
+    if(time.day==22):
+        bot.send_message(message.chat.id,"1 пара(8:00) Введение в алгоритмы и структуры данных (практ) ауд. 424/8")
+        bot.send_message(message.chat.id,"2 пара(9:45) Линейная алгебра (практ) ауд. 326/12")
+    if(time.day==23):
+        bot.send_message(message.chat.id,"2 пара(9:45) Введение в математический анализ (лек) ауд. 202/8")
 
     #file = open('./photo.jpg','rb')
     #bot.send_photo(message.chat.id,file)
@@ -70,7 +67,5 @@ def get_user_text(message):
         bot.send_message(message.chat.id, f"Твой id:{message.from_user.id}", parse_mode="html")
     else:
         bot.send_message(message.chat.id, "Я тебя не понимаю, воспользуйся командой /help чтобы узнать чем я могу тебе помочь", parse_mode="html")
-
-
 
 bot.polling(none_stop=True)
