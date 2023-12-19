@@ -28,6 +28,7 @@ def help(message):
 
 @bot.message_handler(commands=["list"])
 def list(message):
+    bot.send_message(message.chat.id, "Дата и время: ", parse_mode="html")
     time=datetime.datetime.now()
     bot.send_message(message.chat.id,time)
     if(time.day==19):
