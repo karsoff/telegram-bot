@@ -61,6 +61,15 @@ def weather(message):
     data = json.loads(res.text)
     bot.reply_to(message, f"сейчас погода: {data['main']['temp']}")
 
+@bot.message_handler()
+def get_user_text(message):
+    if message.text=="привет" or message.text=="Привет" :
+       bot.send_message(message.chat.id, "И тебе привет, чтобы узнать больше воспользуйтесь /help", parse_mode="html")
+    elif message.text=="id":
+        bot.send_message(message.chat.id, f"Твой id:{message.from_user.id}", parse_mode="html")
+    else:
+        bot.send_message(message.chat.id, "Я тебя не понимаю, воспользуйся командой /help чтобы узнать чем я могу тебе помочь", parse_mode="html")
+
 
 
 bot.polling(none_stop=True)
